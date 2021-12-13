@@ -4,9 +4,6 @@
   
 # Description  
 This project allows users to post their projects for other users to rate according to design, usability and content 
-##  Live Link  
- Click [View Site]()  to visit the site
-  
  
 ## User Story  
   
@@ -16,8 +13,6 @@ This project allows users to post their projects for other users to rate accordi
 * Search for projects.  
 * View projects overall score.
 * A user can view their profile page.  
-  
-
   
 ## Setup and Installation  
 To get the project .......  
