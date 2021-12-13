@@ -2,13 +2,24 @@ import os
 import dj_database_url
 from decouple import config,Csv
 
+import os
+import dj_database_url
+from decouple import config,Csv
+
+SECRET_KEY = config('SECRET_KEY')
+
 
 DEBUG = config('DEBUG', default=False, cast=bool)
+   DATABASES = {
+       'default': dj_database_url.config(
+           default=config('DATABASE_URL')
+       )
+   }
 
-ALLOWED_HOSTS = []
+db_from_env = dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(db_from_env)
 
-
-
+ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
